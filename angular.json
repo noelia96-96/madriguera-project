@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "madriguera-project"
+    }
+  },
+  "defaultProject": "madriguera-project",
+  "cli": {
+    "analytics": false
+  }
 }

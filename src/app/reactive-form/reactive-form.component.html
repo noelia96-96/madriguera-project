@@ -1,0 +1,36 @@
+<form class="container" style="margin-top: 20px;" [formGroup]="reactiveForm" (ngSubmit)="submit()">
+    <div class="form-group"> 
+        <label for="firstName"><b>Nombre</b> </label><br>
+        <input type="text" formControlName="firstName">
+    </div>
+    <div class="form-group"> 
+        <label for="firstName"><b>Email</b> </label><br>
+        <input type="email" formControlName="email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert-danger" required>
+            <div class="container-error-message">Email is required</div>
+        </div>
+    </div>
+
+    <div class="form-group-check">
+        <input type="checkbox" formControlName="check" required >
+        <label for="check">Aceptar términos y condiciones</label>
+
+    </div>
+  
+    <div class="form-group">
+        <button type="submit" class="btn btn-info" [disabled]="!reactiveForm.valid">Enviar</button>
+    </div>
+
+    <!-- <p>
+        Form Status: {{ reactiveForm.status }}
+      </p> -->
+  
+  </form>
+
+ <!--  <div class="form-group"> 
+    <label for="firstName"><b>Email</b> </label><br>
+    <input type="text" formControlName="email"  [(formGroup)]="reactiveForm"  #email="ngForm" required>
+    <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Email no valido</div>
+</div> -->
+
+<!-- reactiveForm donde ahora pone profileForm por el cambio en el ts  -->
